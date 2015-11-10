@@ -1,0 +1,12 @@
+<p>
+  <strong>Nombre:</strong>
+  <%= @tipopostre.nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @tipopostre.descripcion %>
+</p>
+
+<%= link_to 'Editar', edit_tipopostre_path(@tipopostre) %> |
+<%= link_to 'Volver', tipopostres_path %>

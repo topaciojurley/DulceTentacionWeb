@@ -1,0 +1,41 @@
+<%= form_for(@postre) do |f| %>
+  <% if @postre.errors.any? %>
+    <div id="error_explanation">
+  
+      <ul>
+      <% @postre.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :sabor %><br>
+    <%= f.text_field  :sabor %>
+  </div>
+  <div class="field">
+    <%= f.label :porcion %><br>
+    <%= f.number_field :porcion %>
+  </div>
+  <div class="field">
+    <%= f.label :precio %><br>
+    <%= f.number_field :precio %>
+  </div>
+  <div class="field">
+    <%= f.label :detalles %><br>
+    <%= f.text_field  :detalles %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipopostre_id %><br>
+    <%= f.select( "tipopostre_id",Tipopostre.all.collect{|l| [ l.nombre, l.id ] }, {include_blank: 'Seleccione Tipo de Postre'}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

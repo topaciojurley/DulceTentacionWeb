@@ -1,0 +1,33 @@
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @especialidad.nombre %>
+</p>
+
+<p>
+  <strong>Detalle:</strong>
+  <%= @especialidad.detalle %>
+</p>
+<h2><center>Especialistas:</center></h2>
+<% @empleados.each do |empleado| %>
+<strong>Nombre: </strong>
+<%= empleado.nombre %>
+<strong> Apellido: </strong>
+<%= empleado.apellido %>
+<br>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%= link_to 'Edit', edit_especialidad_path(@especialidad) %> |
+<%= link_to 'Back', especialidads_path %>

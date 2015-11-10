@@ -1,0 +1,37 @@
+<h1>Mis Empleados</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Rut</th>
+      <th>Direccion</th>
+      <th>Correo</th>
+      <th>Fechanacimiento</th>
+      <th>Telefono</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @empleados.each do |empleado| %>
+      <tr>
+        <td><%= empleado.nombre %></td>
+        <td><%= empleado.apellido %></td>
+        <td><%= empleado.rut %></td>
+        <td><%= empleado.direccion %></td>
+        <td><%= empleado.correo %></td>
+        <td><%= empleado.fechanacimiento %></td>
+        <td><%= empleado.telefono %></td>
+        <td><%= link_to 'Mostrar', empleado %></td>
+        <td><%= link_to 'Editar', edit_empleado_path(empleado) %></td>
+        <td><%= link_to 'Eliminar', empleado, method: :delete, data: { confirm: 'Estas seguro de elminar?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Empleado', new_empleado_path %>

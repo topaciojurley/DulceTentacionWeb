@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  porcion: 1
+  precio: 1
+  tipopostre_id: 
+
+two:
+  nombre: MyString
+  porcion: 1
+  precio: 1
+  tipopostre_id: 

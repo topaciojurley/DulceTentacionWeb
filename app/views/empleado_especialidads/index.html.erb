@@ -1,0 +1,27 @@
+<h1>Empleados y sus especialidades</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Empleado</th>
+      <th>Especialidad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @empleado_especialidads.each do |empleado_especialidad| %>
+      <tr>
+        <td><%= empleado_especialidad.empleado.nombre  %></td>
+        <td><%= empleado_especialidad.especialidad.nombre %></td>
+        <td><%= link_to 'Mostrar', empleado_especialidad %></td>
+        <td><%= link_to 'Editar', edit_empleado_especialidad_path(empleado_especialidad) %></td>
+        <td><%= link_to 'Eliminar', empleado_especialidad, method: :delete, data: { confirm: 'Estas seguro de elimnar?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Empleado y su Especialidad', new_empleado_especialidad_path %>

@@ -1,0 +1,2 @@
+module EmpleadoEspecialidadsHelper
+end

@@ -1,0 +1,25 @@
+<%= form_for(@empleado_especialidad) do |f| %>
+  <% if @empleado_especialidad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@empleado_especialidad.errors.count, "error") %> prohibited this empleado_especialidad from being saved:</h2>
+
+      <ul>
+      <% @empleado_especialidad.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :empleado_id %><br>
+    <%= f.select( "empleado_id",Empleado.all.collect{|l| [ l.nombre, l.id ] }, {include_blank: 'Seleccione Empleado'}) %>
+  </div>
+  <div class="field">
+    <%= f.label :especialidad_id %><br>
+    <%= f.select( "especialidad_id",Especialidad.all.collect{|l| [ l.nombre, l.id ] }, {include_blank: 'Seleccione la Especialidad'}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

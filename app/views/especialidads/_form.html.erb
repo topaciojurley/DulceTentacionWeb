@@ -1,0 +1,24 @@
+<%= form_for(@especialidad) do |f| %>
+  <% if @especialidad.errors.any? %>
+    <div id="error_explanation">
+      
+      <ul>
+      <% @especialidad.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :detalle %><br>
+    <%= f.text_field :detalle %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

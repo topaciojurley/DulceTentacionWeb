@@ -1,0 +1,14 @@
+
+
+<p>
+  <strong>Empleado:</strong>
+  <%= @empleado_especialidad.empleado.nombre %>
+</p>
+
+<p>
+  <strong>Especialidad:</strong>
+  <%= @empleado_especialidad.especialidad.nombre %>
+</p>
+
+<%= link_to 'Editar', edit_empleado_especialidad_path(@empleado_especialidad) %> |
+<%= link_to 'Volver', empleado_especialidads_path %>

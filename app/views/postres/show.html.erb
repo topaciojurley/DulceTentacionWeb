@@ -1,0 +1,34 @@
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @postre.nombre %>
+</p>
+<p>
+  <strong>Sabor:</strong>
+  <%= @postre.sabor %>
+</p>
+
+<p>
+  <strong>Porcion:</strong>
+  <%= @postre.porcion %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @postre.precio %>
+</p>
+
+<p>
+  <strong>Detalles:</strong>
+  <%= @postre.detalles %>
+</p>
+
+
+
+<p>
+  <strong>Tipopostre:</strong>
+  <%= @postre.tipopostre.nombre %>
+</p>
+
+<%= link_to 'Editar', edit_postre_path(@postre) %> |
+<%= link_to 'Volver', postres_path %>

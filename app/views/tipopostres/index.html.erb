@@ -1,0 +1,27 @@
+<h1>Tipo de Postres</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tipopostres.each do |tipopostre| %>
+      <tr>
+        <td><%= tipopostre.nombre %></td>
+        <td><%= tipopostre.descripcion %></td>
+        <td><%= link_to 'Mostrar', tipopostre %></td>
+        <td><%= link_to 'Editar', edit_tipopostre_path(tipopostre) %></td>
+        <td><%= link_to 'Eliminar', tipopostre, method: :delete, data: { confirm: 'Estas seguro de eliminar?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Tipopostre', new_tipopostre_path %>
