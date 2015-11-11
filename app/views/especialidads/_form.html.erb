@@ -1,7 +1,7 @@
 <%= form_for(@especialidad) do |f| %>
   <% if @especialidad.errors.any? %>
     <div id="error_explanation">
-      
+
       <ul>
       <% @especialidad.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -21,4 +21,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  <%= f.hidden_field :usuario_id, :value => current_usuario_id %>
 <% end %>
