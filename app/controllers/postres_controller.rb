@@ -4,7 +4,7 @@ class PostresController < ApplicationController
   # GET /postres
   # GET /postres.json
   def index
-    @postres = Postre.all
+    @postres = Postre.porcion_minimo(params[:porcion_minimo]).all
   end
 
   # GET /postres/1
